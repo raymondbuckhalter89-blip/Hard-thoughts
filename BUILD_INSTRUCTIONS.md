@@ -2,6 +2,21 @@
 
 This document explains how to build the Android APK for the Hard Thoughts app.
 
+## Quick Start: Using GitHub Actions (Recommended)
+
+The APK can be built automatically using GitHub Actions:
+
+1. Go to your repository on GitHub
+2. Click on the **Actions** tab
+3. Select **Build Android APK** from the workflows list
+4. Click **Run workflow** button (top right)
+5. Select the `copilot/build-apk` branch
+6. Click the green **Run workflow** button
+7. Wait 3-5 minutes for the build to complete
+8. Download the APK from the workflow run's **Artifacts** section
+
+The workflow will automatically build the APK and make it available for download.
+
 ## Prerequisites
 
 The project has been configured with:
@@ -10,30 +25,18 @@ The project has been configured with:
 - ✅ Vite build configuration
 - ✅ GitHub Actions workflow for automated building
 
-## Option 1: Build via GitHub Actions (Recommended)
+## Option 1: Build via GitHub Actions (Automated)
 
-The easiest way to build the APK is using GitHub Actions, which runs in GitHub's cloud infrastructure with access to all required dependencies.
-
-### Steps:
-
-1. Push your changes to the `copilot/build-apk` branch (or any branch)
-2. Go to your GitHub repository
-3. Click on the "Actions" tab
-4. Select "Build Android APK" workflow
-5. Click "Run workflow"
-6. Wait for the workflow to complete (usually 3-5 minutes)
-7. Download the APK from the workflow artifacts
+The GitHub Actions workflow is configured to run:
+- Automatically on every push to the `copilot/build-apk` branch
+- Manually via the "Run workflow" button in the Actions tab
 
 The workflow will:
 - Install Node.js dependencies
 - Build the web application
 - Initialize and configure Capacitor
 - Build the Android APK
-- Upload the APK as an artifact
-
-### Automatic Builds
-
-The workflow is also configured to run automatically when you push to the `copilot/build-apk` branch.
+- Upload the APK as an artifact named `hard-thoughts-debug-apk`
 
 ## Option 2: Build Locally
 
@@ -81,6 +84,13 @@ The APK will be located at:
 ### Cannot access dl.google.com
 
 If you encounter network issues accessing Google's Maven repository, use the GitHub Actions workflow instead. GitHub's runners have access to all required repositories.
+
+### Workflow needs approval
+
+If the workflow shows "action_required", you may need to:
+1. Go to repository Settings → Actions → General
+2. Under "Workflow permissions", ensure workflows have read and write permissions
+3. Re-run the workflow from the Actions tab
 
 ### Missing dependencies
 
