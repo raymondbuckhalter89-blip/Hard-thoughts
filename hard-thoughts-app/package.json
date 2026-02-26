@@ -1,0 +1,31 @@
+{
+  "name": "hard-thoughts",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "cap:init": "cap init HardThoughts com.hardthoughts.app --web-dir=dist",
+    "cap:android": "npm run build && cap add android && cap sync android",
+    "cap:sync": "npm run build && cap sync"
+  },
+  "dependencies": {
+    "framer-motion": "^11.0.0",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "wouter": "^3.3.5"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2",
+    "@capacitor/core": "^6.1.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.8",
+    "@vitejs/plugin-react": "^4.3.1"
+  }
+}
