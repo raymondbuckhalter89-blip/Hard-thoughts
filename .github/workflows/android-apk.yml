@@ -21,32 +21,13 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Extract and navigate to app directory
-        run: |
-          unzip hard-thoughts-app-fullstack.zip
-          cd hard-thoughts-app
-
       - name: Install dependencies
         working-directory: hard-thoughts-app
         run: npm ci
 
-      - name: Install Tailwind CSS
-        working-directory: hard-thoughts-app
-        run: npm install -D tailwindcss@3 postcss autoprefixer
-
       - name: Build web
         working-directory: hard-thoughts-app
         run: npm run build
-
-      - name: Install Capacitor Android
-        working-directory: hard-thoughts-app
-        run: npm install @capacitor/android@^6.1.2
-
-      - name: Capacitor init
-        working-directory: hard-thoughts-app
-        run: |
-          npx cap init HardThoughts com.hardthoughts.app --web-dir=dist || true
-          npx cap add android || true
 
       - name: Sync Android
         working-directory: hard-thoughts-app
