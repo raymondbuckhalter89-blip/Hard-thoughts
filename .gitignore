@@ -1,0 +1,27 @@
+# Dependencies
+hard-thoughts-app/node_modules/
+hard-thoughts-app/server/node_modules/
+
+# Build outputs
+hard-thoughts-app/dist/
+hard-thoughts-app/android/app/build/
+hard-thoughts-app/android/build/
+hard-thoughts-app/android/.gradle/
+hard-thoughts-app/android/local.properties
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
