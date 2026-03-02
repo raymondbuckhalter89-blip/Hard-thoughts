@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">HardThoughts</string>
+    <string name="title_activity_main">HardThoughts</string>
+    <string name="package_name">com.hardthoughts.app</string>
+    <string name="custom_url_scheme">com.hardthoughts.app</string>
+</resources>
